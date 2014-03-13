@@ -7,14 +7,17 @@
 
 #include "Group.hpp"
 
+// ---------------------------------------------------------------------------
 Group::Group() {
 
 }
 
+// ---------------------------------------------------------------------------
 Group::~Group() {
 
 }
 
+// ---------------------------------------------------------------------------
 float Group::totalExpenses() const {
     float aTotal = 0;
     for (size_t i=0; i < this->size(); i++) {
@@ -23,7 +26,18 @@ float Group::totalExpenses() const {
     return aTotal;
 }
 
+// ---------------------------------------------------------------------------
 float Group::expensesPerPerson() const {
     float aExpense = this->totalExpenses() / this->size();
     return aExpense;
+}
+
+// ---------------------------------------------------------------------------
+const string& Group::getName() const {
+    return _name;
+}
+
+// ---------------------------------------------------------------------------
+void Group::setName(const string& iName) {
+    _name = iName;
 }

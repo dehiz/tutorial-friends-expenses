@@ -12,6 +12,9 @@
 
 using namespace std;
 
+// Forward declaration
+class Group;
+
 class Person {
 public:
     //! Constructor and destructor
@@ -31,10 +34,12 @@ public:
     const string& getPhoneNumber() const;
     float getExpenses() const;
     float getPayback() const;
+    const Group& getGroup() const;
     void setName(const string& iName);
     void setPhoneNumber(const string& iPhoneNumber);
     void setExpenses(const float iExpenses);
     void setPayback(const float iPayback);
+    void setGroup(Group* iGroup);
     //@}
 
 private:
@@ -42,6 +47,7 @@ private:
     string _phoneNumber;
     float _expenses;
     float _payback;
+    Group* _group;
 };
 
 #endif /* PERSON_HPP_ */

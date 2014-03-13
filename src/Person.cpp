@@ -6,6 +6,7 @@
  */
 
 #include "Person.hpp"
+#include "Group.hpp"
 
 // ---------------------------------------------------------------------------
 Person::Person() :
@@ -41,6 +42,10 @@ float Person::getPayback() const {
     return _payback;
 }
 
+const Group& Person::getGroup() const {
+    return *_group;
+}
+
 void Person::setName(const string& iName) {
     _name = iName;
 }
@@ -55,4 +60,8 @@ void Person::setExpenses(const float iExpenses) {
 
 void Person::setPayback(const float iPayback) {
     _payback = iPayback;
+}
+
+void Person::setGroup(Group *iGroup) {
+    _group = iGroup;
 }

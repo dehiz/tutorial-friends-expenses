@@ -15,14 +15,18 @@ using namespace std;
 
 int main(int argc, char **argv) {
     unsigned int aNb = 0;
+    string aName;
 
     /*
      *  Register the input
      */
+    cout << "What is the group name?" << endl;
+    cin >> aName;
     cout << "How many people are you?" << endl;
     cin >> aNb;
 
     Group aGroup;
+    aGroup.setName(aName);
 
     for (unsigned int i=0; i < aNb; i++) {
         Person aPerson;
@@ -57,8 +61,9 @@ int main(int argc, char **argv) {
     cout << endl;
 
     cout << "Name\t\t" << "Phone Number\t" << "Expenses\t"
-        << "Payback" << endl;
-    cout << "------------------------------------------------------------"
+        << "Payback\t\t" << "Group Name" << endl;
+    cout << "------------------------------------------"
+        << "----------------------------------"
         << endl;
 
     for (size_t i=0; i < aGroup.size(); ++i) {
@@ -67,7 +72,7 @@ int main(int argc, char **argv) {
         // display the values
         cout << aGroup[i].getName() << "\t\t" << aGroup[i].getPhoneNumber()
             << "\t\t" << aGroup[i].getExpenses() << "\t\t"
-            << aGroup[i].getPayback() << endl;
+            << aGroup[i].getPayback() << "\t\t" << aGroup.getName() << endl;
     }
     cout << endl;
 
