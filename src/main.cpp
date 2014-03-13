@@ -26,15 +26,23 @@ int main(int argc, char **argv) {
 
     for (unsigned int i=0; i < aNb; i++) {
         Person aPerson;
+        string aBuffer;
+        float aValue;
 
         cout << "What is the name of person " << i+1 << " ?" << endl;
-        cin >> aPerson._name;
+        cin >> aBuffer;
+        // set person's name
+        aPerson.setName(aBuffer);
 
         cout << "What is the phone number of person " << i+1 << " ?" << endl;
-        cin >> aPerson._phoneNumber;
+        cin >> aBuffer;
+        // set person's phone number
+        aPerson.setPhoneNumber(aBuffer);
 
         cout << "What is the expenses of person " << i+1 << " ?" << endl;
-        cin >> aPerson._expenses;
+        cin >> aValue;
+        // set person's expenses
+        aPerson.setExpenses(aValue);
 
         aGroup.push_back(aPerson);
     }
@@ -57,9 +65,9 @@ int main(int argc, char **argv) {
         // operate the payback first
         aGroup[i].operatePayback(aExpensesPerPerson);
         // display the values
-        cout << aGroup[i]._name << "\t\t" << aGroup[i]._phoneNumber
-            << "\t\t" << aGroup[i]._expenses << "\t\t"
-            << aGroup[i]._payback << endl;
+        cout << aGroup[i].getName() << "\t\t" << aGroup[i].getPhoneNumber()
+            << "\t\t" << aGroup[i].getExpenses() << "\t\t"
+            << aGroup[i].getPayback() << endl;
     }
     cout << endl;
 

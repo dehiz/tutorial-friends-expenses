@@ -12,7 +12,8 @@
 
 #include <vector>
 
-struct Group : public vector<Person> {
+class Group : public vector<Person> {
+public:
     Group();
     virtual ~Group();
 

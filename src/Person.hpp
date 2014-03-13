@@ -12,11 +12,32 @@
 
 using namespace std;
 
-struct Person {
+class Person {
+public:
+    //! Constructor and destructor
+    //@{
     Person();
     virtual ~Person();
-    void operatePayback(const float iExpensesPerPerson);
+    //@}
 
+    //! Methods
+    //@{
+    void operatePayback(const float iExpensesPerPerson);
+    //@}
+
+    //! Getters and setters
+    //@{
+    const string& getName() const;
+    const string& getPhoneNumber() const;
+    float getExpenses() const;
+    float getPayback() const;
+    void setName(const string& iName);
+    void setPhoneNumber(const string& iPhoneNumber);
+    void setExpenses(const float iExpenses);
+    void setPayback(const float iPayback);
+    //@}
+
+private:
     string _name;
     string _phoneNumber;
     float _expenses;
